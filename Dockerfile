@@ -13,7 +13,7 @@ RUN export uid=1000 gid=1000 pswd=password && \
     mkdir -p /etc/sudoers.d && \
     echo "$USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER && \
     chmod 0440 /etc/sudoers.d/$USER && \
-    chown ${uid}:${gid} -R /home/$USER
+    chown ${uid}:${gid} -R /home/$USER && \
     rm -rf /var/lib/apt/lists/*
 USER $USER
 ENV HOME /home/$USER
